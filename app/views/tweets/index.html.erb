@@ -1,0 +1,6 @@
+<div class = "contents row" >
+   <% @tweets.each do |tweet| %><!-- @tweet"s"としたのは複数入っていることをわかりやすくするため また、配列クラスのインスタンスのように作用しています。-->
+     <%= render partial:"tweet",locals: {tweet: tweet}%>
+   <% end %>
+ <%= paginate(@tweets) %> <!-- ここでページネーションを回収してます -->
+</div>

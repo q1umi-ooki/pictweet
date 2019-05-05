@@ -1,0 +1,9 @@
+<div class="contents row" >
+    <p><%= @nickname %>さんの投稿一覧</p><!-- @nicknameはここへ代入 -->
+    <% @tweets.each do |tweet| %> <!-- @tweet（個々のツイート）の配列要素はここで代入 -->
+      <div class="content_post" style="background-image: url(<%= tweet.image %>);">
+        <%= simple_format(tweet.text) %>
+      </div>
+    <% end %>
+    <%= paginate(@tweets) %> <!-- @tweetsのページネーションはここで回収される。 -->
+  </div>
